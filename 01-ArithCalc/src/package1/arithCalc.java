@@ -3,6 +3,7 @@ package package1;
 import java.util.Scanner;
 import java.io.*;
 
+
 public class arithCalc {
 	
 	public static void main(String[] args) 
@@ -189,4 +190,5 @@ public class arithCalc {
 		while(flag==true); 
 		
 	}
+
 }

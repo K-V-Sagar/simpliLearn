@@ -1,7 +1,6 @@
 package packageA;
 
 public class publicClassA {
-	
 	public void displayPublic() {
 		System.out.println("Public method of Package A -> Public Class");
 	}
@@ -15,5 +14,4 @@ public class publicClassA {
 		publicClassA obj2 = new publicClassA();
 		obj2.displayPublic();
 	}
-
 }

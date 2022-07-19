@@ -1,7 +1,6 @@
 package packageA;
 
 public class defaultClassA {
-
 	int a=10;
 	
 	private void display1() {

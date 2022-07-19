@@ -12,5 +12,4 @@ public class publicClassB {
 		publicClassA obj3 = new publicClassA();
 		obj3.displayPublic();
 		}
-
 }

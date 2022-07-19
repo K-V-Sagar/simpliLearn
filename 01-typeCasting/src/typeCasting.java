@@ -1,6 +1,7 @@
 
 public class typeCasting {
-	public static void main(String[] args) {
+	
+public static void main(String[] args) {
 		
 		char a = 'A'; int x1=10, x2=1024;
 		
@@ -32,4 +33,5 @@ public class typeCasting {
 		
 		
 	}
+
 }
