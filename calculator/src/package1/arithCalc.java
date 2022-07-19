@@ -1,6 +1,7 @@
 package package1;
 
 import java.util.Scanner;
+import java.io.*;
 
 public class arithCalc {
 	
@@ -120,33 +121,42 @@ public class arithCalc {
 				x2=sc.nextInt();
 				System.out.println("Enter 1 to obatin Quotient and 2 to obtain Remainder");
 				int i=sc.nextInt();
-				if(i==1) {
-					int divRes=objdiv.div(x1, x2);
-					System.out.println("Quotient: "+divRes+"\n\n");
+				
+				try{
+					if(i==1) {
+						int divRes=objdiv.div(x1, x2);
+						System.out.println("Quotient: "+divRes+"\n\n");		
+					}
+					else if(i==2){
+						int divRes=objdiv.remainder(x1, x2);
+						System.out.println("Remainder: "+divRes+"\n\n");
+					}
+					else {
+						System.out.println("Wrong choice selected!!!");
+						System.out.println("Try again.\n\n");
+						flag=true;
+						break;
+					}
 				}
-				else if(i==2){
-					int divRes=objdiv.remainder(x1, x2);
-					System.out.println("Remainder: "+divRes+"\n\n");
+				catch(java.lang.ArithmeticException e) {
+					System.out.println("Cannot divide by zero!!!");
 				}
-				else {
-					System.out.println("Wrong choice selected!!!");
-					System.out.println("Try again.\n\n");
-					flag=true;
-					break;
+				finally {
+					System.out.println("---------------------------------------------------\n\n");
+					System.out.println("Do you want to try again? \n Enter 1 for Yes and 0 for No");
+					c=sc.nextInt();
+					if(c==1) {
+						flag=true;
+						break;
+					}
+					else {
+						System.out.println("****************** TERMINATED ******************");
+						System.out.println("******************* THANK YOU ******************");
+						flag=false;
+						break;
+					}
 				}
-				System.out.println("---------------------------------------------------\n\n");
-				System.out.println("Do you want to try again? \n Enter 1 for Yes and 0 for No");
-				c=sc.nextInt();
-				if(c==1) {
-					flag=true;
-					break;
-				}
-				else {
-					System.out.println("****************** TERMINATED ******************");
-					System.out.println("******************* THANK YOU ******************");
-					flag=false;
-					break;
-				}
+				
 			
 				
 				
