@@ -8,11 +8,12 @@ import java.util.TreeSet;
 
 public class virtualRepo {
 	
+	// set is made static as it occupies less space as one instance is shared among all objects
 	static Set<String> file = new TreeSet<>();
 	
 	public static void main(String[] args){
 		
-		
+		//System.out.println("This is static");
 		file.add("Honda.txt");
 		file.add("Toyota.txt");
 		file.add("Isuzu.txt");
@@ -65,7 +66,7 @@ public class virtualRepo {
 				do {
 					
 					System.out.println("----------------------------------------------------------");
-					System.out.println("                Add / Delete / Search MENU                ");
+					System.out.println("                       ACTION MENU                        ");
 					System.out.println("----------------------------------------------------------");
 					System.out.println("\n");
 					System.out.println("1. Add a new file to the existing directory.");
