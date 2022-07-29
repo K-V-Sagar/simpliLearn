@@ -1,5 +1,7 @@
 package package1;
 
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -8,7 +10,7 @@ public class virtualRepo {
 	
 	static Set<String> file = new TreeSet<>();
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		
 		
 		file.add("Honda.txt");
@@ -37,6 +39,7 @@ public class virtualRepo {
 			System.out.println("3. Exit.");
 			System.out.println("Enter your choice: ");
 			Scanner sc = new Scanner(System.in);
+			try {
 			int choice = sc.nextInt();
 			
 			switch(choice) {
@@ -51,8 +54,8 @@ public class virtualRepo {
 					break;
 				}
 				else {
-					System.out.println("****************** TERMINATED ******************");
-					System.out.println("******************* THANK YOU ******************");
+					System.out.println("************************* TERMINATED ************************");
+					System.out.println("************************** THANK YOU ************************");
 					flag=false;
 					break;
 				}
@@ -70,6 +73,7 @@ public class virtualRepo {
 					System.out.println("3. Search a file in the existing directory.");
 					System.out.println("4. Go back to the Main Menu.");
 					System.out.println("Enter your choice: ");
+					try {
 					int subChoice = sc.nextInt();
 					switch(subChoice) {
 					
@@ -134,6 +138,29 @@ public class virtualRepo {
 						flag1 = false;
 						System.out.println("Going back to Main Menu...\n\n");
 						break;
+						
+					default :
+						System.out.println("Wrong choice selected!!!");
+						System.out.println("Do you want to try again? \nEnter 1 for Yes and 0 for No");
+						c=sc.nextInt();
+						if(c==1) {
+							flag1=true;
+							System.out.println("\n\n");
+							break;
+						}
+						else {
+							flag1 = false;
+							System.out.println("Going back to Main Menu...\n\n");
+							break;
+						}	
+					}
+					}
+					catch(InputMismatchException e) {
+						System.out.println("Enter only a number!!!");
+						System.out.println("Going back to Main Menu...\n\n");
+						flag1=false;
+			 			//break;
+						
 					}
 					
 				}
@@ -149,6 +176,29 @@ public class virtualRepo {
 				flag=false;
 				break;
 				
+			default :
+				System.out.println("Wrong choice selected!!!");
+				System.out.println("Do you want to try again? \nEnter 1 for Yes and 0 for No");
+				c=sc.nextInt();
+				if(c==1) {
+					flag=true;
+					System.out.println("\n\n");
+					break;
+				}
+				else {
+					System.out.println("************************* TERMINATED ************************");
+					System.out.println("************************** THANK YOU ************************");
+					flag=false;
+					break;
+				}	
+				
+			}
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Enter only a number!!!\n");
+				flag=true;
+	 			System.out.println("\n\n");
+				
 			}
 		}
 		while(flag==true);
@@ -162,7 +212,13 @@ public class virtualRepo {
 	
 	//add file method
 	public static void addFile(String fname) {
-		file.add(fname);
+		if((file.contains(fname)==true)) {
+			System.out.println("File already exists!");
+			System.out.println("-------------------------------");
+		}
+		else {
+			file.add(fname);
+		}
 	}
 	
 	//case sensitive file delete method
