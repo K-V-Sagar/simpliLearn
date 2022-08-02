@@ -1,2 +1,3 @@
 # simpliLearn
-# Hi, you will find the zipped projects to download in the folder ZIPPED
+# Phase 2 projects are in the folder named "Phase-2" 
+# Zipped files are the folder "ZIPPED"
