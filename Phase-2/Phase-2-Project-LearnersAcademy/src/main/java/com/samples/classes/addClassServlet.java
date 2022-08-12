@@ -35,7 +35,7 @@ public class addClassServlet extends HttpServlet {
 
 			txn.begin();
 			
-			MasterClasses mc = new MasterClasses("C03","Class 3");
+			MasterClasses mc = new MasterClasses("C04","Class 4");
 		
 			session.persist(mc);
 			
@@ -73,7 +73,7 @@ public class addClassServlet extends HttpServlet {
 
 			txn.begin();
 			
-			MasterClasses mc = new MasterClasses("C03","Class 3");
+			MasterClasses mc = new MasterClasses("C04","Class 4");
 		
 			session.persist(mc);
 			

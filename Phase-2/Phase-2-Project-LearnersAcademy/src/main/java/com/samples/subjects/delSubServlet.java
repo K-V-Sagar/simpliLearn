@@ -24,7 +24,7 @@ public class delSubServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		MasterSubjects ms = new MasterSubjects("S03","GK");
+		MasterSubjects ms = new MasterSubjects("S09","GK");
 		
 		session.beginTransaction();
 		session.delete(ms);
@@ -40,7 +40,7 @@ public class delSubServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		MasterSubjects ms = new MasterSubjects("S03","GK");
+		MasterSubjects ms = new MasterSubjects("S09","GK");
 		
 		session.beginTransaction();
 		session.delete(ms);

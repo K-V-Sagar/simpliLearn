@@ -26,7 +26,7 @@ public class delClassServlet extends HttpServlet {
 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		MasterClasses mc = new MasterClasses("C03","Class III");
+		MasterClasses mc = new MasterClasses("C04","Class IV");
 		
 		session.beginTransaction();
 		session.delete(mc);
@@ -43,7 +43,7 @@ public class delClassServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		MasterClasses mc = new MasterClasses("C03","Class III");
+		MasterClasses mc = new MasterClasses("C04","Class IV");
 		
 		session.beginTransaction();
 		session.delete(mc);

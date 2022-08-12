@@ -34,7 +34,7 @@ public class addSubServlet extends HttpServlet {
 
 			txn.begin();
 			
-			MasterSubjects ms = new MasterSubjects("S03","History");
+			MasterSubjects ms = new MasterSubjects("S09","History");
 		
 			session.persist(ms);
 			
@@ -73,7 +73,7 @@ public class addSubServlet extends HttpServlet {
 
 			txn.begin();
 			
-			MasterSubjects ms = new MasterSubjects("S03","History");
+			MasterSubjects ms = new MasterSubjects("S09","History");
 		
 			session.persist(ms);
 			
