@@ -49,9 +49,9 @@ public class addProductServlet extends HttpServlet {
 		// displaying the table
 		details.add(prod);
 		// Product_details is used in for-each loop in the .jsp file
-		request.setAttribute("Teacher_List", details);
+		request.setAttribute("Product_Details", details);
 		// forwarding the request to the .jsp file
-		RequestDispatcher rd = request.getRequestDispatcher("/listProdDetails.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/Success.jsp");
 		rd.forward(request, response);
 		
 	}

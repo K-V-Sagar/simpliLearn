@@ -12,6 +12,7 @@
 <body>
 	
 	<h1>Product Details:</h1>
+	<h2>Product details read from table...</h2>
 	<table>
 		<tr>
 			<th>Product ID</th>
