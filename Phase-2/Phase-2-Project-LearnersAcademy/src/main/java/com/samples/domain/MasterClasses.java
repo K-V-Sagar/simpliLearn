@@ -51,6 +51,13 @@ public class MasterClasses {
 
 	}
 	
+	// for master list
+	public MasterClasses(String classID, String className) {
+		super();
+		this.classID = classID;
+		this.className = className;
+
+	}
 		
 	public MasterClasses() {
 		super();
