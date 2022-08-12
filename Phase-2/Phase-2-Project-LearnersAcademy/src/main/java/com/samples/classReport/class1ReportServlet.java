@@ -45,7 +45,9 @@ public class class1ReportServlet extends HttpServlet {
 			
 			// Table 1
 			// using ResultSet to store the result and then print using the results object
-			ResultSet results = statement.executeQuery("SELECT b.classID, b.className, d.subjectID, d.subjectName FROM masterclasses b JOIN mastersubjects d ON b.classID = d.classID WHERE b.classID='C01' ORDER BY b.classID;");
+			ResultSet results = statement.executeQuery("SELECT b.classID, b.className, d.subjectID,"
+					+ " d.subjectName FROM masterclasses b JOIN mastersubjects d ON b.classID = d.classID"
+					+ " WHERE b.classID='C01' ORDER BY b.classID;");
 			PrintWriter out = response.getWriter();
 			
 			out.println("<h1>Class 1 Report:</h1>");
@@ -71,7 +73,9 @@ public class class1ReportServlet extends HttpServlet {
 			
 			// Table 2
 			// using ResultSet to store the result and then print using the results object
-			ResultSet results1 = statement.executeQuery("SELECT b.classID, b.className, c.studentID,c.studentName FROM masterclasses b JOIN masterstudents c ON b.classID = c.classID WHERE b.classID='C01' ORDER BY b.classID;");
+			ResultSet results1 = statement.executeQuery("SELECT b.classID, b.className, c.studentID,"
+					+ "c.studentName FROM masterclasses b JOIN masterstudents c ON b.classID = c.classID "
+					+ "WHERE b.classID='C01' ORDER BY b.classID;");
 			PrintWriter out1 = response.getWriter();
 			
 			out1.println("<h3>Class - Student</h3>");
@@ -95,10 +99,12 @@ public class class1ReportServlet extends HttpServlet {
 			
 			// Table 3
 			// using ResultSet to store the result and then print using the results object
-			ResultSet results2 = statement.executeQuery("SELECT b.classID, b.className, a.teacherID, a.teacherName FROM masterclasses b JOIN masterteachers a ON b.teacherID = a.teacherID WHERE b.classID='C01' ORDER BY b.classID;");
+			ResultSet results2 = statement.executeQuery("SELECT b.classID, b.className, a.teacherID,"
+					+ " a.teacherName FROM masterclasses b JOIN masterteachers a ON b.teacherID = a.teacherID"
+					+ " WHERE b.classID='C01' ORDER BY b.classID;");
 			PrintWriter out2 = response.getWriter();
 			
-			out2.println("<h3>Class - Teachet</h3>");
+			out2.println("<h3>Class - Teacher</h3>");
 			out2.println("<table>");
 			out2.println("<tr>");
 			out2.println("<th>Class ID</th>");
