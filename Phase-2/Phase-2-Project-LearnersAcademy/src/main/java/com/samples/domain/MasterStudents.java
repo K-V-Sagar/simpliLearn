@@ -41,7 +41,13 @@ public class MasterStudents {
 		this.masterclasses = masterclasses;
 	}
 	
-		
+	// for master list
+	public MasterStudents(String studentID, String studentName) {
+		super();
+		this.studentID = studentID;
+		this.studentName = studentName;
+	}
+	
 	public MasterStudents() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,16 +13,16 @@
 	
 	<h1>Operation Complete!</h1>
 	<h2>The following entry is made...</h2>
-	<h3>( Printing from the ArrayList "msList" )</h3>
+	<h3>( Printing from the ArrayList "mstuList" )</h3>
 	<table>
 		<tr>
-			<th>Subject ID</th>
-			<th>Subject Name</th> 
+			<th>Student ID</th>
+			<th>Student Name</th> 
 		</tr>
-		<c:forEach var="subj" items="${Subjects_List}" >
+		<c:forEach var="stud" items="${Students_List}" >
 		<tr>
-			<td>${subj.subjectID}</td>
-			<td>${subj.subjectName}</td>
+			<td>${stud.studentID}</td>
+			<td>${stud.studentName}</td>
 		</tr>
 		</c:forEach>
 	</table>
