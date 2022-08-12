@@ -1,41 +1,55 @@
 package com.samples.subjects;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class delSubServlet
- */
+import org.hibernate.Session;
+
+import com.samples.domain.MasterClasses;
+import com.samples.domain.MasterSubjects;
+import com.samples.utils.HibernateUtil;
+
+
 @WebServlet("/delSubServlet")
 public class delSubServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public delSubServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		
+		MasterSubjects ms = new MasterSubjects("S03","GK");
+		
+		session.beginTransaction();
+		session.delete(ms);
+		session.getTransaction().commit();
+		session.close();
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<h1>Deleted!</h1>");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		
+		MasterSubjects ms = new MasterSubjects("S03","GK");
+		
+		session.beginTransaction();
+		session.delete(ms);
+		session.getTransaction().commit();
+		session.close();
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<h1>Deleted!</h1>");
 	}
 
 }

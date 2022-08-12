@@ -40,7 +40,12 @@ public class MasterSubjects {
 		this.masterclasses = masterclasses;
 	}
 	
-	
+	// for master list
+	public MasterSubjects(String subjectID, String subjectName) {
+		super();
+		this.subjectID = subjectID;
+		this.subjectName = subjectName;
+	}
 	
 	public MasterSubjects() {
 		super();
