@@ -17,7 +17,7 @@ th {
 </style>
 <body>
 
-	<h2>Search Menu</h2>
+	<h2>Search Result</h2>
 
 	<table>
 		<tr>
