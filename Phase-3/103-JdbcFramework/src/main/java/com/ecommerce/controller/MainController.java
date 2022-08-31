@@ -28,7 +28,7 @@ public class MainController {
            @Autowired    
             EProductDAO eproductDAO;    
            @RequestMapping(value = "/listProducts", method = RequestMethod.GET)
-            public String listProducts(ModelMap map)
+            public String listProducts(ModelMap model)
             {
                     List<EProduct> list= eproductDAO.getProducts();
                 model.addAttribute("list",list);  
