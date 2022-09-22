@@ -1,0 +1,38 @@
+<div
+  class="container"
+  style="width: 1000px; background-color: cornflowerblue; height: 800px"
+>
+  <h1 style="text-align: center">Welcome to My Portfolio</h1>
+  <h5 style="text-align: center">Developed by K V Sagar</h5>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="nav nav-tabs" style="background-color: blue">
+          <li
+            role="presentation"
+            class="nav-item"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" style="color: aliceblue" routerLink="/">Home</a>
+          </li>
+          <li role="presentation" class="nav-item" routerLinkActive="active">
+            <a class="nav-link" style="color: aliceblue" routerLink="signin"
+              >Sign In</a
+            >
+          </li>
+          <li role="presentation" class="nav-item" routerLinkActive="active">
+            <a class="nav-link" style="color: aliceblue" routerLink="signup"
+              >Sign Up</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
