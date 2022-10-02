@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\javafsd\simpliLearn\Phase-5\lesson1\AssistedProj\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2094005429.index
+3040004298.index
+2301894650.index
