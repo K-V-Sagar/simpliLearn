@@ -136,14 +136,8 @@ public class MainController {
 		User u = new User();
 		u = optProduct.get();
 
-		Random generator = new Random(System.currentTimeMillis());
-		Long num = generator.nextLong() % 1000000000;
-		num=Math.abs(num);
-		String aadhNum = String.valueOf(num);
-
 		if ((u.getDuplicateCardRequest() == true)) {
 			u.setDuplicateCardRequest(null);
-			u.setAadhaarNum(aadhNum);
 		}
 		final User updatedUser = userAuthRepo.save(u);
 		return ResponseEntity.ok(updatedUser);
