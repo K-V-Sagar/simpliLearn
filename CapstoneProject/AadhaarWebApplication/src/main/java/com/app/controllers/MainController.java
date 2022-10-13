@@ -116,7 +116,7 @@ public class MainController {
 		Long num = generator.nextLong() % 1000000000;
 		String aadhNum = String.valueOf(num);
 
-		if ((u.getNewCardRequest() == true) && (u.getAadhaarNum() == null)) {
+		if ((u.getNewCardRequest() == true)) {
 			u.setNewCardRequest(null);
 			u.setAadhaarNum(aadhNum);
 		}
@@ -125,7 +125,7 @@ public class MainController {
 
 	}
 
-	// Admin Issue New Card
+	// Admin Issue Duplicate Card
 	@RequestMapping(value = "/admin/dupCard/{id}", method = RequestMethod.POST)
 	public ResponseEntity<User> issueDupCard(@PathVariable("id") Integer id, @RequestBody User user) {
 		Optional<User> optProduct = userAuthRepo.findById(id);
@@ -138,6 +138,7 @@ public class MainController {
 
 		Random generator = new Random(System.currentTimeMillis());
 		Long num = generator.nextLong() % 1000000000;
+		num=Math.abs(num);
 		String aadhNum = String.valueOf(num);
 
 		if ((u.getDuplicateCardRequest() == true)) {
@@ -218,7 +219,7 @@ public class MainController {
 
 	}
 
-	// User Apply New Card
+	// User Apply Duplicate Card
 	@RequestMapping(value = "/user/dupCard/{id}", method = RequestMethod.POST)
 	public ResponseEntity<User> dupCard(@PathVariable("id") Integer id, @RequestBody User user) {
 		Optional<User> optProduct = userAuthRepo.findById(id);
@@ -229,7 +230,7 @@ public class MainController {
 		User u = new User();
 		u = optProduct.get();
 
-		u.setDuplicateCardRequest(user.getDuplicateCardRequest());
+		u.setDuplicateCardRequest(true);
 		final User updatedUser = userAuthRepo.save(u);
 		return ResponseEntity.ok(updatedUser);
 
